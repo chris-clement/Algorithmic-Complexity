@@ -22,7 +22,7 @@ class TimingFramework
     return @sample_array
   end
 
-  def runAlgoTimer(array_of_arrays)
+  def run_algo_timer(array_of_arrays)
     start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
     array_of_arrays.last
     finish = Process.clock_gettime(Process::CLOCK_MONOTONIC)
