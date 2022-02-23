@@ -8,7 +8,13 @@ class TimingFramework
 # time_taken = []
 
   def create_sample_array(start_size, end_size, increment)
-    [[20, 3, 1], [20,3, 1, 2], [20,3, 1, 2], [20,3, 1, 2], [20,3, 1, 2, 3]]
+    result = []
+    i = start_size
+    while i < end_size
+      result << random_array(i, 10)
+      i += 1
+    end
+    return result
   end
 
 
