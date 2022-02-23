@@ -28,7 +28,10 @@ describe 'TimingFramework' do
   end
   describe '#run_algo_timer' do
     it('returns an array') do
-      expect(@timingFramework.run_algo_timer([1, 2, 3])).to be_an_instance_of(Array)
+      expect(@timingFramework.run_algo_timer([[1], [2], [3]])).to be_an_instance_of(Array)
+    end
+    it('returns an array of length same as the input') do
+      expect(@timingFramework.run_algo_timer([[1], [2], [3]]).length).to eq 3
     end
   end
 end

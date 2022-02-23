@@ -23,22 +23,12 @@ class TimingFramework
   end
 
   def run_algo_timer(array_of_arrays)
-    start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
-    array_of_arrays.last
-    finish = Process.clock_gettime(Process::CLOCK_MONOTONIC)
-    time_in_millis = (finish - start) * 1000
-    @algo_timer_results << { 'size': array_of_arrays.length, 'time': time_in_millis}
+    array_of_arrays.each do |array|
+      start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+      array.last
+      finish = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+      time_in_millis = (finish - start) * 1000
+      @algo_timer_results << { 'size': array.length, 'time': time_in_millis}
+    end
   end
-
-# array_of_array_of_random_numbers.each do |array|
-#   start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
-#   array.last
-#   finish = Process.clock_gettime(Process::CLOCK_MONOTONIC)
-#   time_in_millis = (finish - start) * 1000
-#   time_taken << {'size': array.length, 'time': time_in_millis}
-# end
-
-
-# print time_taken
-
 end
