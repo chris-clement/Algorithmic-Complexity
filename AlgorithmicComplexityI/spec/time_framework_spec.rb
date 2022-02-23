@@ -25,4 +25,9 @@ describe 'TimingFramework' do
       expect(element_count_difference).to eq 1
     end
   end
+  describe '#runAlgoTimer' do
+    it('returns an array') do
+      expect(@timingFramework.runAlgoTimer).to be_an_instance_of(Array)
+    end
+  end
 end

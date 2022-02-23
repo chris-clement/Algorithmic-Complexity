@@ -21,6 +21,9 @@ class TimingFramework
     return @sample_array
   end
 
+  def runAlgoTimer()
+    []
+  end
 
 # array_of_array_of_random_numbers.each do |array|
 #   start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
