@@ -11,11 +11,9 @@ class TimingFramework
     x.times.map{ rand(max) }
   end
 
-# time_taken = []
-
   def create_sample_array(start_size, end_size, increment)
     i = start_size
-    while i < end_size
+    while i <= end_size
       @sample_array << random_array(i, 10)
       i += increment
     end
@@ -31,4 +29,11 @@ class TimingFramework
       @algo_timer_results << { 'size': array.length, 'time': time_in_millis}
     end
   end
+
+  def runTest
+    create_sample_array(10, 20, 2)
+    run_algo_timer(@sample_array)
+    print @algo_timer_results
+  end
+
 end
