@@ -7,6 +7,7 @@ describe 'TimingFramework' do
   end
   it('initializes with certain variables') do
     expect(@timingFramework.sample_array).to eq []
+    expect(@timingFramework.algo_timer_results).to eq []
   end
   describe '#random_array' do
     it('generates an array') do
@@ -27,7 +28,7 @@ describe 'TimingFramework' do
   end
   describe '#runAlgoTimer' do
     it('returns an array') do
-      expect(@timingFramework.runAlgoTimer).to be_an_instance_of(Array)
+      expect(@timingFramework.runAlgoTimer([1, 2, 3])).to be_an_instance_of(Array)
     end
   end
 end
