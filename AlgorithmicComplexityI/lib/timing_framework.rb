@@ -1,5 +1,11 @@
 class TimingFramework
 
+  attr_reader :sample_array
+
+  def initialize
+    @sample_array = []
+  end
+
   def random_array(x, max)
     x.times.map{ rand(max) }
   end
@@ -17,14 +23,6 @@ class TimingFramework
     return result
   end
 
-
-# i = 1
-# while i < 5
-#   array_of_array_of_random_numbers << random_array(i, 10)
-#   i += 1
-# end
-
-# print array_of_array_of_random_numbers
 
 # array_of_array_of_random_numbers.each do |array|
 #   start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
