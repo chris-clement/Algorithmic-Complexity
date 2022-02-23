@@ -8,7 +8,7 @@ class TimingFramework
 # time_taken = []
 
   def create_sample_array(start_size, end_size, increment)
-    []
+    [[20, 3, 1], [20,3, 1, 2], [20,3, 1, 2], [20,3, 1, 2], [20,3, 1, 2, 3]]
   end
 
 
