@@ -10,17 +10,15 @@ class TimingFramework
     x.times.map{ rand(max) }
   end
 
-# sample_array = []
 # time_taken = []
 
   def create_sample_array(start_size, end_size, increment)
-    result = []
     i = start_size
     while i < end_size
-      result << random_array(i, 10)
+      @sample_array << random_array(i, 10)
       i += increment
     end
-    return result
+    return @sample_array
   end
 
 
