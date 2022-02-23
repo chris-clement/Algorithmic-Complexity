@@ -12,7 +12,7 @@ class TimingFramework
     i = start_size
     while i < end_size
       result << random_array(i, 10)
-      i += 1
+      i += increment
     end
     return result
   end
