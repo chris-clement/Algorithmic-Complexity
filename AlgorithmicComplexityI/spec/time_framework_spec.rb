@@ -9,5 +9,8 @@ describe 'TimingFramework' do
     it('generates an array') do
       expect(@timingFramework.random_array(10, 5)).to be_an_instance_of(Array)
     end
+    it('generates an array of length equal to first argument') do
+      expect(@timingFramework.random_array(10, 5).length).to eq 10
+    end
   end
 end
