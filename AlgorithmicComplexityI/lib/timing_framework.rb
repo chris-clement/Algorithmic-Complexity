@@ -4,8 +4,12 @@ class TimingFramework
     x.times.map{ rand(max) }
   end
 
-# array_of_array_of_random_numbers = []
+# sample_array = []
 # time_taken = []
+
+  def create_sample_array(start_size, end_size, increment)
+    []
+  end
 
 
 # i = 1
