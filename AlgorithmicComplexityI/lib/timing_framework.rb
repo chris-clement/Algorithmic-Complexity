@@ -22,12 +22,12 @@ class TimingFramework
 
   def run_algo_timer(array_of_arrays)
     array_of_arrays.each do |array|
-      start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+      start = Process.clock_gettime(Process::CLOCK_MONOTONIC, :nanosecond)
       # change below what algo you want to test
-      array.sort
-      finish = Process.clock_gettime(Process::CLOCK_MONOTONIC)
-      time_in_millis = (finish - start) * 1000
-      @algo_timer_results << { 'size': array.length, 'time': time_in_millis}
+      array.shuffle
+      finish = Process.clock_gettime(Process::CLOCK_MONOTONIC, :nanosecond)
+      time_in_micros = (finish - start) / 1000
+      @algo_timer_results << { 'size': array.length, 'time': time_in_micros}
     end
   end
 
@@ -57,3 +57,7 @@ class TimingFramework
   end
 
 end
+
+example = TimingFramework.new
+example.run_test_and_save_to_text(10, 5000, 100000, 5000)
+

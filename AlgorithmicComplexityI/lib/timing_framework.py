@@ -18,8 +18,8 @@ class TimingFramework:
       start = time.monotonic_ns()
       array.sort()
       finish = time.monotonic_ns()
-      time_in_millis = (finish - start) / 1000
-      self._algo_timer_results.append({'size': len(array), 'time': time_in_millis})
+      time_in_micros = (finish - start) / 1000
+      self._algo_timer_results.append({'size': len(array), 'time': time_in_micros})
 
   def run_test(self, start_size, end_size, increment):
     self._algo_timer_results = []
