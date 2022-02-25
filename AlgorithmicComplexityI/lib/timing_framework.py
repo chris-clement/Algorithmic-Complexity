@@ -1,3 +1,6 @@
+# test reverse using array[::-1]
+# test last using array[-1]
+
 import time
 from numpy import random
 
@@ -16,7 +19,8 @@ class TimingFramework:
   def run_algo_timer(self, array_of_arrays):
     for array in array_of_arrays:
       start = time.monotonic_ns()
-      array.sort()
+      # change below what algo you want to test
+      array[::-1]
       finish = time.monotonic_ns()
       time_in_micros = (finish - start) / 1000
       self._algo_timer_results.append({'size': len(array), 'time': time_in_micros})
@@ -45,4 +49,3 @@ class TimingFramework:
 
 example = TimingFramework()
 example.run_test_and_save_to_text(10, 5000, 100000, 5000)
-# print(example._algo_timer_results)
