@@ -31,7 +31,7 @@ class TimingFramework
     end
   end
 
-  def runTest(start_size, end_size, increment)
+  def run_test(start_size, end_size, increment)
     @algo_timer_results = []
     create_sample_array(start_size, end_size, increment)
     run_algo_timer(@sample_array)

@@ -15,6 +15,7 @@ class TimingFramework:
     while i <= end_size:
       self._sample_array.append(random.randint(10, size = (i)))
       i += increment
+  
       
   def run_algo_timer(self, array_of_arrays):
     for array in array_of_arrays:
