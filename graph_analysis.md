@@ -1,0 +1,2 @@
+- Sort is O(n log n). So n is linear, but log n is not. Less efficient than linear but close to linear.
+- 

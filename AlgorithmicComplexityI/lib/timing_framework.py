@@ -9,6 +9,8 @@ class TimingFramework:
   def __init__(self):
     self._sample_array = []
     self._algo_timer_results = []
+    self._algo_timer_results_size = []
+    self._algo_timer_results_time = []
 
   def create_random_array_of_arrays(self, start_size, end_size, increment):
     i = start_size
@@ -40,13 +42,17 @@ class TimingFramework:
     f.write("Size\n")
     for result in self._algo_timer_results:
       f.write(f'{result.get("size")}\n')
+      self._algo_timer_results_size.append(result.get("size"))
     f.write("Time\n")
     for result in self._algo_timer_results:
       f.write(f'{result.get("time")}\n')
+      self._algo_timer_results_time.append(result.get("time"))
     f.close
 
 
 
 
 example = TimingFramework()
+
 example.run_test_and_save_to_text(10, 5000, 100000, 5000)
+print(example._algo_timer_results_size)
