@@ -52,6 +52,12 @@ class TimingFramework:
       f.write(f'{result.get("time")}\n')
       self._algo_timer_results_time.append(result.get("time"))
     f.close
+  
+  def my_reverse(self, list):
+    reversed_array = []
+    for i in range(len(list)):
+      reversed_array.append(list.pop())
+    return reversed_array
 
 
 
@@ -61,10 +67,9 @@ example = TimingFramework()
 example.run_test_and_save_to_text(1, 5000, 100000, 5000)
 x = example._algo_timer_results_size
 y = example._algo_timer_results_time
-print(x)
-print(y)
 plt.plot(x, y)
 plt.xlabel('Size of Array')
 plt.ylabel('Time in microseconds')
 plt.title('Algorithmic Efficiency')
 plt.show()
+
