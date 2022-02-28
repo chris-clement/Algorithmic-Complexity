@@ -57,7 +57,7 @@ class TimingFramework
   end
 
   def my_reverse(list)
-    []
+    return list
   end
 
 end
