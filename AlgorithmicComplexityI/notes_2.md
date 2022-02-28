@@ -38,5 +38,10 @@ Number of groups is 0. --> Throw error
 Negative number of groups. --> Throw error
 1 person but 2 groups required.--> Throw error
 
-Function signature is determing types of inputs vs types of outputs e.g. array, string, integers.
+Function signature comprises of the following: 
+
+- type of parameter
+- name of parameters
+- type of return values
+- name of function
 

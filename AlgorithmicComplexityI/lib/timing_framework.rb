@@ -39,7 +39,7 @@ class TimingFramework
 
   def run_test_and_save_to_text(repitions, start_size, end_size, increment)
     repitions.times do 
-      runTest(start_size, end_size, increment)
+      run_test(start_size, end_size, increment)
     end
     File.write('./lib/data.txt', "Size\n", mode: 'w')
     @algo_timer_results.each do |result|
@@ -54,6 +54,10 @@ class TimingFramework
       }
     end
     puts "done"
+  end
+
+  def my_reverse(list)
+    []
   end
 
 end

@@ -34,4 +34,9 @@ describe 'TimingFramework' do
       expect(@timingFramework.run_algo_timer([[1], [2], [3]]).length).to eq 3
     end
   end
+  describe '#my_reverse' do
+    it('returns an array') do
+      expect(@timingFramework.my_reverse([[1, 2, 3]])).to be_an_instance_of(Array)
+    end
+  end
 end
