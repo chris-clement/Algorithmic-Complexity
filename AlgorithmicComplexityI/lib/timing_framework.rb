@@ -57,7 +57,11 @@ class TimingFramework
   end
 
   def my_reverse(list)
-    return list
+    reversed_array = []
+    list.length.times do 
+      reversed_array << list.pop
+    end
+    return reversed_array
   end
 
 end

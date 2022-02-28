@@ -41,5 +41,8 @@ describe 'TimingFramework' do
     it('returns an array of the same element if input is array with 1 element') do
       expect(@timingFramework.my_reverse([1])).to eq [1]
     end
+    it('returns an array reversed for 2 elements') do
+      expect(@timingFramework.my_reverse([1, 2])).to eq [2, 1]
+    end
   end
 end
