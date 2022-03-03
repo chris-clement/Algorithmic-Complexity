@@ -2,6 +2,7 @@
 # test last using array[-1]
 
 import time
+import csv
 
 class TimingFramework:
 
@@ -16,13 +17,14 @@ class TimingFramework:
       size = len(array)
       start = time.monotonic_ns()
       # change below what algo you want to test
-      self.my_reverse(array)
+      # self.my_reverse(array)
+      array.reverse()
       finish = time.monotonic_ns()
       time_in_micros = (finish - start) / 1000
       self._algo_timer_results.append({'size': size, 'time': time_in_micros})
 
   def run_test(self, array):
-    # self._algo_timer_results = []
+    self._algo_timer_results = []
     self.run_algo_timer(array)
 
   def run_test_and_save_to_text(self, array):
@@ -37,6 +39,12 @@ class TimingFramework:
       f.write(f'{result.get("time")}\n')
       self._algo_timer_results_time.append(result.get("time"))
     f.close
+
+  def save_to_csv(self):
+    with open("excel_doc.csv", "w", newline="") as csvfile:
+      writer = csv.DictWriter(csvfile, fieldnames = set().union(*(dictionary.keys() for dictionary in self._algo_timer_results)) )
+      writer.writeheader()
+      writer.writerows(self._algo_timer_results)
   
   def my_reverse(self, array):
     reversed_array = []
