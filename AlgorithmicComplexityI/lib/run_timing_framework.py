@@ -1,12 +1,15 @@
 from timing_framework import *
+from create_sample_array import *
 import matplotlib.pyplot as plt
 
-example = TimingFramework()
+sample_creator = SampleCreator()
+sample_creator.create_random_array_of_arrays(50000, 1000000, 5000)
 
-example.run_test_and_save_to_text(1, 5000, 100000, 5000)
+timing_framework = TimingFramework(sample_creator._sample_array)
+timing_framework.run_test_and_save_to_text(sample_creator._sample_array)
 
-x = example._algo_timer_results_size
-y = example._algo_timer_results_time
+x = timing_framework._algo_timer_results_size
+y = timing_framework._algo_timer_results_time
 plt.plot(x, y)
 plt.xlabel('Size of Array')
 plt.ylabel('Time in microseconds')

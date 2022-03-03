@@ -2,45 +2,32 @@
 # test last using array[-1]
 
 import time
-from numpy import random
-import pip
-pip.main(["install","matplotlib"])
 
 class TimingFramework:
 
-  def __init__(self):
-    self._sample_array = []
+  def __init__(self, sample_array):
+    self._sample_array = sample_array
     self._algo_timer_results = []
     self._algo_timer_results_size = []
-    self._algo_timer_results_time = []
-
-  def create_random_array_of_arrays(self, start_size, end_size, increment):
-    i = start_size
-    while i <= end_size:
-      self._sample_array.append(random.randint(10, size = (i)))
-      i += increment
-  
+    self._algo_timer_results_time = []  
       
   def run_algo_timer(self, array_of_arrays):
     for array in array_of_arrays:
+      size = len(array)
       start = time.monotonic_ns()
       # change below what algo you want to test
-      array[::-1]
+      self.my_reverse(array)
       finish = time.monotonic_ns()
       time_in_micros = (finish - start) / 1000
-      self._algo_timer_results.append({'size': len(array), 'time': time_in_micros})
+      self._algo_timer_results.append({'size': size, 'time': time_in_micros})
 
-  def run_test(self, start_size, end_size, increment):
-    self._algo_timer_results = []
-    self.create_random_array_of_arrays(start_size, end_size, increment)
-    self.run_algo_timer(self._sample_array)
+  def run_test(self, array):
+    # self._algo_timer_results = []
+    self.run_algo_timer(array)
 
-  def run_test_and_save_to_text(self, repitions, start_size, end_size, increment):
-    i = 0
-    while i < repitions:
-      self.run_test(start_size, end_size, increment)
-      i += 1
-    f = open("./lib/python_data.txt", "w")
+  def run_test_and_save_to_text(self, array):
+    self.run_test(array)
+    f = open("python_data.txt", "w")
     f.write("Size\n")
     for result in self._algo_timer_results:
       f.write(f'{result.get("size")}\n')
@@ -51,10 +38,10 @@ class TimingFramework:
       self._algo_timer_results_time.append(result.get("time"))
     f.close
   
-  def my_reverse(self, list):
+  def my_reverse(self, array):
     reversed_array = []
-    for i in range(len(list)):
-      reversed_array.append(list.pop())
+    for i in range(len(array)):
+      reversed_array.append(array.pop())
     return reversed_array
 
 
