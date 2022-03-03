@@ -17,7 +17,6 @@ class TimingFramework:
       size = len(array)
       start = time.monotonic_ns()
       # change below what algo you want to test
-      # self.my_reverse(array)
       array.reverse()
       finish = time.monotonic_ns()
       time_in_micros = (finish - start) / 1000
