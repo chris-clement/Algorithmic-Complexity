@@ -51,4 +51,14 @@ class TimingFramework:
       reversed_array.append(array.pop())
     return reversed_array
 
+  def my_sort(self, array):
+    # reversed_array = []
+    for j in range(len(array)):
+      for i in range(len(array) - 1):
+        if array[i] > array[i + 1]:
+          x = array[i]
+          y = array[i + 1]
+          array[i], array[i + 1] = y, x
+    return array
+
 
