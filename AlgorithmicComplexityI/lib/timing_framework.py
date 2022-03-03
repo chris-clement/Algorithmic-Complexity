@@ -61,4 +61,3 @@ class TimingFramework:
           array[i], array[i + 1] = y, x
     return array
 
-
