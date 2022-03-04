@@ -59,4 +59,19 @@ class TimingFramework:
           y = array[i + 1]
           array[i], array[i + 1] = y, x
     return array
+  
+  def find_duplicates(self, array):
+    duplicates = []
+    test_array = []
+    array_length = len(array)
+    for i in range(array_length):
+      test_array.append(array.pop())
+      if test_array[-1] in array:
+        duplicates.append(test_array[-1])
+      # for i in range(len(array)):
+      #   if array[i] == array[j]:
+      #     duplicates.append[array[i]]
+    print(duplicates)
+    return duplicates
+
 
