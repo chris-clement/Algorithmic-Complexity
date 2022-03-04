@@ -19,6 +19,7 @@ def test_find_duplicates():
   assert isinstance(timing_framework.find_duplicates([1, 2, 2, 3]), list) == True
   assert timing_framework.find_duplicates(['hi', 'hi', 'bye', 'cya']) == ['hi']
   assert timing_framework.find_duplicates(['hi', 'bye', 'hi', 'bye', 'should']).sort() == ['hi', 'bye'].sort()
+  assert timing_framework.find_duplicates(['hi', 'hi', 'hi', 'hi', 'hi']) == ['hi']
 
 
 
