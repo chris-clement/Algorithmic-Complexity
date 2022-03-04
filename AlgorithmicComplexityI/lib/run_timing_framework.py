@@ -3,7 +3,7 @@ from create_sample_array import *
 import matplotlib.pyplot as plt
 
 sample_creator = SampleCreator()
-sample_creator.create_random_array_of_arrays(5000, 100000, 5000)
+sample_creator.create_random_array_of_arrays(50, 1000, 50)
 
 timing_framework = TimingFramework(sample_creator._sample_array)
 timing_framework.run_test_and_save_to_text(sample_creator._sample_array)

@@ -17,7 +17,7 @@ class TimingFramework:
       size = len(array)
       start = time.monotonic_ns()
       # change below what algo you want to test
-      array.reverse()
+      array.sort()
       finish = time.monotonic_ns()
       time_in_micros = (finish - start) / 1000
       self._algo_timer_results.append({'size': size, 'time': time_in_micros})
@@ -52,7 +52,6 @@ class TimingFramework:
     return reversed_array
 
   def my_sort(self, array):
-    # reversed_array = []
     for j in range(len(array)):
       for i in range(len(array) - 1):
         if array[i] > array[i + 1]:
